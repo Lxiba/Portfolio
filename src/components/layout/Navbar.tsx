@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
-  { label: "About", href: "#overview" },
+  { label: "Introduction", href: "#overview" },
   { label: "Education", href: "#education" },
-  { label: "Skills", href: "#skills" },
+  { label: "Inventory", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -33,15 +33,13 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-        {/* Logo */}
         <a
           href="#hero"
           className="text-xl font-bold hover:text-lava-accent transition-colors lava-text"
         >
-          LA
+          ^-^
         </a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -54,7 +52,6 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Mobile burger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="flex md:hidden flex-col gap-1.5 w-8 h-8 items-center justify-center"
@@ -75,7 +72,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

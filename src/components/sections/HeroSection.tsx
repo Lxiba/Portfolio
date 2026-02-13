@@ -18,14 +18,12 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
-      {/* Loading placeholder */}
       {!loaded && (
         <div className="absolute inset-0 bg-lava-bg flex items-center justify-center">
           <div className="w-12 h-12 border-4 border-lava-accent/30 border-t-lava-accent rounded-full animate-spin" />
         </div>
       )}
 
-      {/* Volcano eruption video */}
       <video
         ref={videoRef}
         autoPlay
@@ -38,10 +36,8 @@ export function HeroSection() {
         <source src="/assets/volcano-eruption.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-lava-bg" />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <motion.h1
           initial={{ opacity: 0, scale: 0.85 }}
@@ -69,10 +65,9 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="text-sm sm:text-base text-lava-text-secondary/70 mt-4 italic tracking-widest uppercase"
         >
-          enjoy my portfolio
+          Welcome! Have a look around my portfolio
         </motion.p>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

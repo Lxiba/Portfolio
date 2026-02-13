@@ -45,7 +45,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             exit={{ opacity: 0, scale: 0.92, y: 20 }}
             transition={{ duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg rounded-3xl overflow-hidden border border-lava-accent/30 shadow-2xl shadow-lava-glow/30"
+            className="relative w-full max-w-lg max-h-[90vh] rounded-3xl overflow-y-auto border border-lava-accent/30 shadow-2xl shadow-lava-glow/30 no-scrollbar"
           >
             <div className={`h-3 bg-gradient-to-r ${project.color}`} />
 
@@ -71,6 +71,25 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </p>
 
               <div className="space-y-5">
+                {project.demoVideo && (
+                  <div>
+                    <h4
+                      className="text-xs font-bold text-lava-text uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      Demo
+                    </h4>
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full rounded-xl border border-lava-card-border"
+                    >
+                      <source src={project.demoVideo} type="video/mp4" />
+                    </video>
+                  </div>
+                )}
+
                 <div>
                   <h4
                     className="text-xs font-bold text-lava-text uppercase tracking-widest mb-2"
@@ -94,6 +113,37 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {project.techUsage}
                   </p>
                 </div>
+
+                {/* Deploy / Live button */}
+                {project.deployUrl && (
+                  <div className="flex justify-end pt-2">
+                    {project.deployUrl === "current" ? (
+                      <span
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold
+                                   text-lava-accent border border-lava-accent/40 bg-lava-accent/10"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
+                        <span className="w-2 h-2 rounded-full bg-lava-accent animate-pulse" />
+                        You are already here!
+                      </span>
+                    ) : (
+                      <a
+                        href={project.deployUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white
+                                   bg-gradient-to-r from-lava-accent to-lava-accent-secondary
+                                   hover:shadow-lg hover:shadow-lava-glow transition-all duration-300 hover:scale-105"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
+                        Visit Live
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-4.5-6H21m0 0v7.5m0-7.5l-9 9" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>

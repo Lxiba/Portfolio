@@ -2,74 +2,199 @@
 
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import Image from "next/image";
 
 const educationData = [
   {
     id: "university",
-    title: "University of Placeholder",
-    degree: "Bachelor of Science in Computer Science",
+    title: "Ontario Tech University",
+    degree: "Bachelor of Engineering",
     years: "2022 — Present",
-    details: "Focusing on software engineering, data structures, algorithms, and distributed systems. Active member of the coding club and hackathon participant.",
+    details: [
+      "4th-year Software Engineering and Management student",
+    ],
+    logo: "/assets/uoit logo.png",
   },
   {
     id: "highschool",
-    title: "Placeholder High School",
+    title: "Sir Wilfrid Laurier C.I.",
     degree: "High School Diploma",
     years: "2018 — 2022",
-    details: "Graduated with honors. Developed a strong foundation in mathematics and sciences. First introduction to programming through AP Computer Science.",
+    details: [
+      "Graduated with Grade A",
+    ],
+    logo: "/assets/SWLCI HS.png",
   },
 ];
 
 export function EducationSection() {
   return (
-    <section id="education" className="relative z-10 py-28 bg-lava-bg-secondary/40">
-      <div className="mx-auto max-w-3xl px-6 sm:px-8">
+    <section
+      id="education"
+      className="relative z-10 py-28"
+      style={{ background: "linear-gradient(180deg, #120303 0%, rgba(26,5,5,0.5) 20%, rgba(26,5,5,0.5) 80%, #0A0000 100%)" }}
+    >
+      <div className="max-w-5xl mx-auto px-6">
+
         <ScrollReveal>
           <SectionHeading title="Education" />
         </ScrollReveal>
 
-        <div className="relative">
-          {/* Vertical timeline line */}
-          <div className="absolute left-7 sm:left-9 top-0 bottom-0 w-0.5 timeline-line" />
+        <div className="relative mt-20">
 
-          <div className="space-y-14">
-            {educationData.map((edu, i) => (
-              <ScrollReveal key={edu.id} delay={i * 0.2}>
-                <div className="relative flex gap-7 sm:gap-9">
-                  {/* Timeline dot */}
-                  <div className="relative z-10 shrink-0">
-                    <div className="w-14 h-14 sm:w-[4.5rem] sm:h-[4.5rem] rounded-full bg-lava-bg border-[3px] border-lava-accent flex items-center justify-center fire-shadow">
-                      <span className="text-2xl">🎓</span>
-                    </div>
-                  </div>
+          {/* CENTER TIMELINE */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-lava-accent to-transparent" />
 
-                  {/* Card with box texture */}
-                  <div className="flex-1 rounded-2xl overflow-hidden border border-lava-accent/30 hover:border-lava-accent/60 transition-all duration-300 hover:shadow-lg hover:shadow-lava-glow/30">
-                    <div className="box-texture p-7 sm:p-8 relative">
-                      <div className="absolute inset-0 bg-black/50" />
-                      <div className="relative z-10">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                          <h3
-                            className="text-lg sm:text-xl font-bold text-lava-text"
-                            style={{ fontFamily: "var(--font-heading)" }}
-                          >
-                            {edu.title}
-                          </h3>
-                          <span className="text-xs font-semibold text-lava-accent px-3 py-1 rounded-full bg-lava-accent/10 border border-lava-accent/30 w-fit whitespace-nowrap">
-                            {edu.years}
-                          </span>
+          {/* MOBILE LINE */}
+          <div className="md:hidden absolute left-5 top-0 bottom-0 w-[2px] bg-lava-accent/40" />
+
+          <div className="space-y-24">
+
+            {educationData.map((edu, index) => {
+
+              const isLeft = index % 2 === 0;
+
+              return (
+                <ScrollReveal key={edu.id} delay={index * 0.2}>
+
+                  {/* DESKTOP */}
+                  <div className="hidden md:flex items-center relative">
+
+                    {/* LEFT SIDE */}
+                    <div className="w-1/2 pr-10 flex justify-end">
+                      {isLeft && (
+                        <div className="w-[420px]">
+                          <TimelineItem edu={edu} side="left" />
                         </div>
-                        <p className="text-lava-accent-secondary font-semibold text-sm mb-2">{edu.degree}</p>
-                        <p className="text-lava-text-secondary text-sm leading-relaxed">{edu.details}</p>
+                      )}
+                    </div>
+
+                    {/* CENTER LOGO */}
+                    <div className="relative z-10 flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full border-2 border-lava-accent bg-lava-bg overflow-hidden shadow-lg hover:scale-110 transition duration-300">
+                        <Image
+                          src={edu.logo}
+                          alt={edu.title}
+                          width={48}
+                          height={48}
+                          className="object-contain w-full h-full p-1"
+                        />
                       </div>
                     </div>
+
+                    {/* RIGHT SIDE */}
+                    <div className="w-1/2 pl-10 flex justify-start">
+                      {!isLeft && (
+                        <div className="w-[420px]">
+                          <TimelineItem edu={edu} side="right" />
+                        </div>
+                      )}
+                    </div>
+
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+
+                  {/* MOBILE */}
+                  <div className="md:hidden flex gap-4">
+
+                    <div className="relative z-10 w-10 h-10 rounded-full border-2 border-lava-accent bg-lava-bg overflow-hidden">
+                      <Image
+                        src={edu.logo}
+                        alt={edu.title}
+                        width={40}
+                        height={40}
+                        className="object-contain w-full h-full p-1"
+                      />
+                    </div>
+
+                    <TimelineItem edu={edu} side="right" mobile />
+
+                  </div>
+
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function TimelineItem({ edu, side, mobile = false }: any) {
+
+  const isLeft = side === "left";
+
+  return (
+    <div className="relative group">
+
+      {/* DATE OUTSIDE BOX */}
+      {!mobile && (
+        <div
+          className={`
+          absolute top-15 text-sm text-lava-text-secondary opacity-80
+          ${isLeft ? "right-[-230px] text-left" : "left-[-215px] text-right"}
+          group-hover:text-lava-accent transition duration-300
+        `}
+        >
+          {edu.years}
+        </div>
+      )}
+
+      {/* CARD */}
+      <div
+        className="
+        relative w-[420px]
+        rounded-2xl overflow-hidden
+        border border-lava-accent/30
+        transition-all duration-500
+        group-hover:border-lava-accent
+        group-hover:shadow-[0_0_25px_rgba(140,0,0,0.6)]
+        group-hover:scale-[1.03]
+      "
+        style={{
+          backgroundImage: "url('/assets/box-texture.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+
+        {/* overlay */}
+        <div className="absolute inset-0 bg-black/55 group-hover:bg-black/45 transition duration-500" />
+
+        {/* content */}
+        <div className="relative z-10 p-6">
+
+          <h3 className="text-lg font-bold text-lava-text mb-1">
+            {edu.title}
+          </h3>
+
+          <p className="text-lava-accent-secondary font-semibold text-sm mb-3">
+            {edu.degree}
+          </p>
+
+          <ul className="space-y-2">
+            {edu.details.map((detail: string, i: number) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-sm text-lava-text-secondary"
+              >
+                <span className="mt-[6px] w-2 h-2 rounded-full bg-[#800000]" />
+                {detail}
+              </li>
+            ))}
+          </ul>
+
+          {/* MOBILE DATE */}
+          {mobile && (
+            <div className="mt-3 text-xs text-lava-text-secondary opacity-70">
+              {edu.years}
+            </div>
+          )}
+
+        </div>
+
+      </div>
+
+    </div>
   );
 }

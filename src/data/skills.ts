@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  icon: string; // Devicon class name
+  icon: string;
 }
 
 export interface SkillCategory {
@@ -14,16 +14,15 @@ export const skillCategories: SkillCategory[] = [
     id: "languages",
     title: "Programming Languages",
     skills: [
-      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
-      { name: "TypeScript", icon: "devicon-typescript-plain colored" },
       { name: "Python", icon: "devicon-python-plain colored" },
       { name: "Java", icon: "devicon-java-plain colored" },
       { name: "C++", icon: "devicon-cplusplus-plain colored" },
-      { name: "C", icon: "devicon-c-plain colored" },
-      { name: "Go", icon: "devicon-go-original-wordmark colored" },
+      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+      { name: "TypeScript", icon: "devicon-typescript-plain colored" },
       { name: "HTML5", icon: "devicon-html5-plain colored" },
       { name: "CSS3", icon: "devicon-css3-plain colored" },
       { name: "SQL", icon: "devicon-azuresqldatabase-plain colored" },
+      { name: "Bash", icon: "devicon-bash-plain" },
     ],
   },
   {
@@ -33,12 +32,16 @@ export const skillCategories: SkillCategory[] = [
       { name: "React", icon: "devicon-react-original colored" },
       { name: "Next.js", icon: "devicon-nextjs-plain" },
       { name: "Node.js", icon: "devicon-nodejs-plain colored" },
-      { name: "Express", icon: "devicon-express-original" },
+      { name: "Django", icon: "devicon-django-plain" },
+      { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
       { name: "Tailwind CSS", icon: "devicon-tailwindcss-original colored" },
-      { name: "FastAPI", icon: "devicon-fastapi-plain colored" },
-      { name: "Django", icon: "devicon-django-plain colored" },
       { name: "Three.js", icon: "devicon-threejs-original" },
-      { name: "Spring Boot", icon: "devicon-spring-original colored" },
+      { name: "Express", icon: "devicon-express-original" },
+      { name: "FastAPI", icon: "devicon-fastapi-plain colored" },
+      { name: "NumPy", icon: "devicon-numpy-plain colored" },
+      { name: "Matplotlib", icon: "devicon-matplotlib-plain colored" },
+      { name: "JUnit", icon: "devicon-junit-plain colored" },
+      { name: "Maven", icon: "devicon-maven-plain colored" },
     ],
   },
   {
@@ -46,15 +49,15 @@ export const skillCategories: SkillCategory[] = [
     title: "Tools & Platforms",
     skills: [
       { name: "Git", icon: "devicon-git-plain colored" },
-      { name: "Docker", icon: "devicon-docker-plain colored" },
+      { name: "GitHub", icon: "devicon-github-original" },
+      { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
       { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
-      { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored" },
-      { name: "Linux", icon: "devicon-linux-plain" },
-      { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
+      { name: "MySQL", icon: "devicon-mysql-plain colored" },
       { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
-      { name: "Redis", icon: "devicon-redis-plain colored" },
-      { name: "Firebase", icon: "devicon-firebase-plain colored" },
-      { name: "Figma", icon: "devicon-figma-plain colored" },
+      { name: "Ubuntu", icon: "devicon-ubuntu-plain colored" },
+      { name: "Supabase", icon: "devicon-supabase-plain colored" },
+      { name: "Vite", icon: "devicon-vitejs-plain colored" },
+      { name: "Google Cloud", icon: "devicon-googlecloud-plain colored" },
     ],
   },
 ];

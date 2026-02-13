@@ -1,18 +1,28 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { projects, type Project } from "@/data/projects";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectModal } from "@/components/ui/ProjectModal";
+import Image from "next/image";
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isDragging = useRef(false);
   const dragStartX = useRef(0);
   const scrollStart = useRef(0);
   const hasDragged = useRef(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const keepPlaying = () => { v.play(); };
+    v.addEventListener("pause", keepPlaying);
+    return () => v.removeEventListener("pause", keepPlaying);
+  }, []);
 
   const onMouseDown = useCallback((e: React.MouseEvent) => {
     if (!trackRef.current) return;
@@ -40,39 +50,39 @@ export function ProjectsSection() {
     if (!hasDragged.current) setSelectedProject(project);
   }, []);
 
-  // Duplicate projects for seamless infinite scroll
   const displayProjects = [...projects, ...projects];
 
   return (
     <section id="projects" className="relative z-10 py-28 overflow-hidden">
-      {/* Lava Lake video background - lazy loaded */}
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="/assets/lava-lake.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
+
+      <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-[#0A0000] to-transparent z-[1] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#0A0000] to-transparent z-[1] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-[100vw]">
         <div className="px-6 sm:px-8">
           <ScrollReveal>
-            <SectionHeading title="Projects" subtitle="Click a project to learn more" />
+            <SectionHeading title="Projects"/>
           </ScrollReveal>
         </div>
 
-        {/* Fade edges */}
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 z-20 bg-gradient-to-r from-black/70 to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 z-20 bg-gradient-to-l from-black/70 to-transparent" />
 
-          {/* Scrollable track */}
           <div
             ref={trackRef}
             onMouseDown={onMouseDown}
@@ -92,15 +102,23 @@ export function ProjectsSection() {
                                   hover:border-lava-accent/50 transition-all duration-300
                                   hover:shadow-xl hover:shadow-lava-glow/40
                                   group-hover:scale-[1.04] group-hover:-translate-y-2">
-                    {/* Project image placeholder */}
                     <div className={`h-40 sm:h-44 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden`}>
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-300" />
-                      <span className="relative text-5xl font-black text-white/20 select-none" style={{ fontFamily: "var(--font-heading)" }}>
-                        {project.title.charAt(0)}
-                      </span>
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={80}
+                          height={80}
+                          className="relative z-10 object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                        />
+                      ) : (
+                        <span className="relative text-5xl font-black text-white/20 select-none" style={{ fontFamily: "var(--font-heading)" }}>
+                          {project.title.charAt(0)}
+                        </span>
+                      )}
                     </div>
 
-                    {/* Info */}
                     <div className="p-5 bg-lava-bg-secondary/95 backdrop-blur-sm">
                       <h3
                         className="text-base font-bold text-lava-text mb-1.5 group-hover:text-lava-accent transition-colors"

@@ -4,58 +4,112 @@ export interface Project {
   techLine: string;
   description: string;
   techUsage: string;
-  color: string; // gradient placeholder color
+  color: string;
+  image?: string;
+  demoVideo?: string;
+  deployUrl?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "project-1",
-    title: "CloudSync Dashboard",
-    techLine: "React, TypeScript, Node.js, PostgreSQL, WebSocket, Docker",
+    id: "specisnap",
+    title: "SpeciSnap",
+    techLine: "React, Vite, Tailwind CSS, Python, FastAPI, Google Gemini AI, PWA",
     description:
-      "A full-stack dashboard for monitoring cloud infrastructure in real time with live metrics, alerting, and interactive visualizations across multiple regions.",
+      "An AI-powered species identification app that lets users upload or capture photos of any animal, plant, flower, or fungus to get instant identification with detailed information including scientific names, habitat, and fun facts.",
     techUsage:
-      "React and TypeScript power the interactive frontend with real-time charts. Node.js with WebSocket handles live data streaming, PostgreSQL stores historical metrics, and Docker containerizes all services.",
-    color: "from-orange-600 to-red-800",
+      "Google Gemini Flash Vision API handles AI-powered species identification with structured prompt engineering. FastAPI serves the Python backend with async request handling. React with custom hooks manages the frontend — camera capture, drag-and-drop upload, and identification flow. Vite handles fast bundling. Tailwind CSS provides responsive styling. Built as a Progressive Web App with service workers for installable mobile experience.",
+    color: "from-green-700 to-emerald-900",
+    image: "/assets/Favicon-Snap.png",
+    deployUrl: "#",
   },
   {
-    id: "project-2",
-    title: "EcoTrack",
-    techLine: "Next.js, Tailwind CSS, Python, FastAPI, MongoDB",
+    id: "eunoia",
+    title: "Eunoia",
+    techLine: "Next.js, React, Tailwind CSS, Google Gemini AI",
     description:
-      "A mobile-first web app that helps users track and reduce their carbon footprint by integrating with transportation and utility APIs.",
+      "An AI-powered mental health journal that helps users understand their emotional patterns. Write about your day, talk to a supportive AI companion, track mood trends over time, and receive weekly personalized reflections.",
     techUsage:
-      "Next.js provides SSR for fast page loads, styled with Tailwind CSS. FastAPI (Python) handles backend logic and API aggregation, with MongoDB for flexible document storage of user data.",
-    color: "from-emerald-600 to-teal-900",
+      "React and Next.js power the frontend with server-side API routes handling AI logic. Google Gemini AI drives sentiment analysis, empathetic chat, and weekly reflections. Tailwind CSS handles dark mode styling, and the Web Speech API enables voice journaling.",
+    color: "from-emerald-500 to-teal-800",
+    image: "/assets/Eunoia logo.png",
+    deployUrl: "#",
   },
   {
-    id: "project-3",
-    title: "DevCollab",
-    techLine: "React, TypeScript, Express, Redis, Socket.io",
+    id: "lava-portfolio",
+    title: "Lava Portfolio",
+    techLine: "Next.js, React, TypeScript, Three.js, Tailwind CSS, Framer Motion",
     description:
-      "A collaborative code editor supporting real-time multi-user editing with syntax highlighting, live cursors, and integrated chat.",
+      "A volcanic/lava-themed personal portfolio featuring 3D meteor particle effects, video backgrounds, scroll-triggered animations, and a fully responsive dark design.",
     techUsage:
-      "React with TypeScript drives the editor UI. Express and Socket.io handle real-time collaboration via operational transformation, and Redis manages session state and pub/sub between instances.",
+      "Next.js handles routing and SSR. Three.js renders an instanced meteor shower particle system. Framer Motion powers scroll-triggered reveal animations. Tailwind CSS with custom theme tokens creates the lava color palette. Video backgrounds are layered with gradient fades for seamless transitions.",
+    color: "from-orange-600 to-red-900",
+    deployUrl: "current",
+  },
+  {
+    id: "pinhaanglow",
+    title: "PinhaanGlow",
+    techLine: "React, TypeScript, Three.js, Zustand, Node.js, Express, Supabase",
+    description:
+      "An AI-powered 3D interior design platform. Place furniture, customize rooms, paint surfaces, generate AI images, create blueprints, and export designs — all from the browser.",
+    techUsage:
+      "React with TypeScript and Vite powers the frontend. Three.js renders a real-time 3D room editor with composite furniture, orbit camera, and contact shadows. Zustand manages editor state with 30-level undo/redo. Node.js + Express handles the backend with Supabase (PostgreSQL) for workspaces and project storage. Stable Diffusion integration enables AI image generation, restyling, and inpainting for room concepts.",
+    color: "from-blue-900 to-yellow-700",
+    image: "/assets/Favicon-PinhaanGlow.png",
+    deployUrl: "#",
+  },
+  {
+    id: "nebula-plan",
+    title: "Nebula Plan",
+    techLine: "React.js, Node.js, MySQL",
+    description:
+      "A platform for planning events, searching venues, and calculating finances using an integrated tool with real-time updates.",
+    techUsage:
+      "React.js handles the interactive frontend for event creation and venue search. Node.js powers the backend server for seamless front-end and server-side interactions. MySQL stores event data, venue information, and financial records with real-time query updates.",
     color: "from-violet-600 to-purple-900",
+    demoVideo: "/assets/Nebula Demo.mp4",
   },
   {
-    id: "project-4",
-    title: "HealthPulse API",
-    techLine: "Go, gRPC, PostgreSQL, Kubernetes, Terraform",
+    id: "bridger",
+    title: "Bridger",
+    techLine: "Django, Bootstrap, Python",
     description:
-      "A RESTful API platform that aggregates and normalizes healthcare data from multiple sources with FHIR compliance and role-based access control.",
+      "A community-focused web app aligned with AODA guidelines, helping users locate accessible venues with user authentication, location-based search, and a rewards point-tracking system.",
     techUsage:
-      "Go provides high-performance API handling with gRPC for inter-service communication. PostgreSQL stores normalized data, Kubernetes orchestrates microservices, and Terraform manages infrastructure as code.",
+      "Django powers the backend with user authentication and location-based venue search. Bootstrap provides a responsive, accessible frontend. Python handles the business logic for the rewards point-tracking system and AODA-compliant data processing.",
+    color: "from-green-600 to-emerald-900",
+    image: "/assets/Briger logo.png",
+  },
+  {
+    id: "cicd-pipeline",
+    title: "CI/CD Pipeline for Binary Calculator",
+    techLine: "Jenkins, Helm, Kubernetes, GCP, GitHub, Maven",
+    description:
+      "A fully automated CI/CD pipeline that builds, tests, and deploys a binary calculator web app on Google Cloud Platform.",
+    techUsage:
+      "Jenkins orchestrates the pipeline stages. Helm manages Kubernetes deployments on GCP for container orchestration. GitHub webhooks trigger automated builds on each push. Maven handles dependency management, source tracking, and build automation.",
     color: "from-blue-600 to-indigo-900",
   },
   {
-    id: "project-5",
-    title: "PixelForge",
-    techLine: "Python, PyTorch, FastAPI, AWS Lambda, S3, Docker",
+    id: "ml-evaluation",
+    title: "Machine Learning Evaluation System",
+    techLine: "Java, Python, NumPy, Pandas, Matplotlib, Maven, JUnit",
     description:
-      "An image processing pipeline leveraging ML models for automatic enhancement, background removal, and style transfer at scale.",
+      "A program that evaluates machine learning models on CSV input data, calculating metrics such as MSE, MAE, AUC, F1-score, BCE, and Confusion Matrix.",
     techUsage:
-      "PyTorch handles ML inference for image processing. FastAPI serves the API layer, AWS Lambda enables serverless scaling, S3 stores processed images, and Docker packages the ML models for deployment.",
-    color: "from-amber-500 to-orange-900",
+      "Java handles the core evaluation logic and metric calculations. Python with NumPy and Pandas processes CSV data, while Matplotlib generates visualizations of model performance. Maven manages project dependencies, and JUnit provides unit testing for validation.",
+    color: "from-rose-600 to-pink-900",
+  },
+  {
+    id: "tasklet",
+    title: "TaskLet",
+    techLine: "HTML, CSS, JavaScript, MySQL, Bootstrap",
+    description:
+      "A dynamic web app that allows users to add, edit, delete, mark complete, and prioritize tasks with a responsive interface.",
+    techUsage:
+      "HTML and CSS structure the UI, with Bootstrap providing responsive design. JavaScript drives the interactive task management (add, edit, delete, prioritize, mark complete). MySQL handles persistent data storage for full-stack functionality.",
+    color: "from-sky-600 to-blue-900",
+    image: "/assets/TaskLet logo.png",
+    demoVideo: "/assets/TaskLet Demo.mp4",
   },
 ];

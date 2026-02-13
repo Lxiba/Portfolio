@@ -5,9 +5,9 @@ import { Footer } from "@/components/layout/Footer";
 import { MeteorShowerWrapper } from "@/components/three/MeteorShowerWrapper";
 
 export const metadata: Metadata = {
-  title: "Laiba Asif | Portfolio",
+  title: "Laiba's Portfolio",
   description:
-    "Laiba Asif's personal portfolio — a lava-themed showcase of projects, skills, and experience.",
+    "My personal portfolio — a lava-themed to showcase my projects, skills, and experience.",
 };
 
 export default function RootLayout({
@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/assets/Favicon.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
