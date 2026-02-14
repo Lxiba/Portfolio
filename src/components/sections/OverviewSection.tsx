@@ -22,8 +22,15 @@ export function OverviewSection() {
 
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-center">
           <ScrollReveal direction="left" className="flex flex-col items-center shrink-0">
-            <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden fire-shadow bg-lava-bg-tertiary border-2 border-lava-accent/30 flex items-center justify-center">
-              <div className="text-6xl text-lava-accent/40 select-none">👤</div>
+            <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden fire-shadow bg-lava-bg-tertiary border-2 border-lava-accent/30">
+              <Image
+                src="/assets/my pic.png"
+                alt="Laiba Asif"
+                width={288}
+                height={288}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
 
             <div className="flex flex-wrap gap-3 mt-8 justify-center">
