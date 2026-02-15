@@ -96,7 +96,7 @@ export function ProjectsSection() {
                 <div
                   key={`${project.id}-${i}`}
                   onClick={() => handleCardClick(project)}
-                  className="shrink-0 w-[280px] sm:w-[320px] group cursor-pointer"
+                  className="shrink-0 w-[240px] sm:w-[320px] group cursor-pointer"
                 >
                   <div className="rounded-2xl overflow-hidden border border-lava-card-border
                                   hover:border-lava-accent/50 transition-all duration-300

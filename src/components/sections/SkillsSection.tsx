@@ -42,7 +42,7 @@ export function SkillsSection() {
                         >
                           <div className="fire-circle-border">
                             <i
-                              className={`${skill.icon} text-4xl`}
+                              className={`${skill.icon} text-2xl sm:text-4xl`}
                               style={{ color: skill.icon.includes("colored") ? undefined : "#FFF0E0" }}
                             />
                           </div>

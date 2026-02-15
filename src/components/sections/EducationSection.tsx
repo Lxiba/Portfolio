@@ -94,9 +94,9 @@ export function EducationSection() {
                   </div>
 
                   {/* MOBILE */}
-                  <div className="md:hidden flex gap-4">
+                  <div className="md:hidden flex gap-4 min-w-0">
 
-                    <div className="relative z-10 w-10 h-10 rounded-full border-2 border-lava-accent bg-lava-bg overflow-hidden">
+                    <div className="relative z-10 w-10 h-10 shrink-0 rounded-full border-2 border-lava-accent bg-lava-bg overflow-hidden">
                       <Image
                         src={edu.logo}
                         alt={edu.title}
@@ -106,7 +106,9 @@ export function EducationSection() {
                       />
                     </div>
 
-                    <TimelineItem edu={edu} side="right" mobile />
+                    <div className="flex-1 min-w-0">
+                      <TimelineItem edu={edu} side="right" mobile />
+                    </div>
 
                   </div>
 
@@ -142,15 +144,15 @@ function TimelineItem({ edu, side, mobile = false }: any) {
 
       {/* CARD */}
       <div
-        className="
-        relative w-[420px]
+        className={`
+        relative ${mobile ? 'w-full' : 'w-[420px]'}
         rounded-2xl overflow-hidden
         border border-lava-accent/30
         transition-all duration-500
         group-hover:border-lava-accent
         group-hover:shadow-[0_0_25px_rgba(140,0,0,0.6)]
         group-hover:scale-[1.03]
-      "
+      `}
         style={{
           backgroundImage: "url('/assets/box-texture.png')",
           backgroundSize: "cover",
@@ -162,13 +164,13 @@ function TimelineItem({ edu, side, mobile = false }: any) {
         <div className="absolute inset-0 bg-black/55 group-hover:bg-black/45 transition duration-500" />
 
         {/* content */}
-        <div className="relative z-10 p-6">
+        <div className={`relative z-10 ${mobile ? 'p-4' : 'p-6'}`}>
 
-          <h3 className="text-lg font-bold text-lava-text mb-1">
+          <h3 className={`${mobile ? 'text-base' : 'text-lg'} font-bold text-lava-text mb-1`}>
             {edu.title}
           </h3>
 
-          <p className="text-lava-accent-secondary font-semibold text-sm mb-3">
+          <p className={`text-lava-accent-secondary font-semibold ${mobile ? 'text-xs' : 'text-sm'} mb-3`}>
             {edu.degree}
           </p>
 
@@ -176,9 +178,9 @@ function TimelineItem({ edu, side, mobile = false }: any) {
             {edu.details.map((detail: string, i: number) => (
               <li
                 key={i}
-                className="flex items-start gap-3 text-sm text-lava-text-secondary"
+                className={`flex items-start gap-3 ${mobile ? 'text-xs' : 'text-sm'} text-lava-text-secondary`}
               >
-                <span className="mt-[6px] w-2 h-2 rounded-full bg-[#800000]" />
+                <span className="mt-[6px] w-2 h-2 shrink-0 rounded-full bg-[#800000]" />
                 {detail}
               </li>
             ))}

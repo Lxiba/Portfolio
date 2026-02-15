@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   background-color: #0A0000;
+  overflow-x: hidden;
 }
 
 body {
@@ -107,8 +108,8 @@ body {
 
 /* ===== Fire Circle Skill Icon ===== */
 .fire-circle-border {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,6 +119,12 @@ body {
   box-shadow: none;
   border-radius: 0;
   transition: all 0.3s ease;
+}
+@media (min-width: 640px) {
+  .fire-circle-border {
+    width: 90px;
+    height: 90px;
+  }
 }
 .fire-circle-border:hover {
   transform: scale(1.15);

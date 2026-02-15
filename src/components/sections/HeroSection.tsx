@@ -32,11 +32,12 @@ export function HeroSection() {
         playsInline
         preload="auto"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ objectPosition: "center 30%" }}
       >
         <source src="/assets/volcano-eruption.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-lava-bg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-lava-bg sm:from-black/30 sm:via-black/20" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
         <motion.h1

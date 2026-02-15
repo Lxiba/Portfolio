@@ -2,7 +2,8 @@
 
 import { type Project } from "@/data/projects";
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -10,6 +11,12 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -27,46 +34,53 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => { document.body.style.overflow = ""; };
   }, [project]);
 
-  return (
+  const modalContent = (
     <AnimatePresence>
       {project && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          transition={{ duration: 0.25 }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4"
           onClick={onClose}
         >
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 bg-black/75 backdrop-blur-md"
+          />
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 20 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, scale: 0.9, y: 30 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg max-h-[90vh] rounded-3xl overflow-y-auto border border-lava-accent/30 shadow-2xl shadow-lava-glow/30 no-scrollbar"
+            className="relative w-full max-w-lg max-h-[85vh] sm:max-h-[90vh] rounded-2xl sm:rounded-3xl overflow-y-auto border border-lava-accent/30 shadow-2xl shadow-lava-glow/30 no-scrollbar"
           >
-            <div className={`h-3 bg-gradient-to-r ${project.color}`} />
+            <div className={`h-2 sm:h-3 bg-gradient-to-r ${project.color}`} />
 
-            <div className="p-8 sm:p-10 bg-lava-bg-secondary">
+            <div className="p-5 sm:p-8 md:p-10 bg-lava-bg-secondary">
               <button
                 onClick={onClose}
-                className="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center
-                           text-lava-text-secondary hover:text-lava-text hover:bg-lava-bg-tertiary transition-all text-lg"
+                className="absolute top-3 right-3 sm:top-5 sm:right-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center
+                           text-lava-text-secondary hover:text-lava-text hover:bg-lava-bg-tertiary transition-all text-base sm:text-lg"
                 aria-label="Close modal"
               >
                 ✕
               </button>
 
               <h2
-                className="text-2xl font-bold text-lava-text mb-2"
+                className="text-xl sm:text-2xl font-bold text-lava-text mb-2 pr-8"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {project.title}
               </h2>
 
-              <p className="text-sm text-lava-accent font-medium mb-6">
+              <p className="text-xs sm:text-sm text-lava-accent font-medium mb-4 sm:mb-6">
                 {project.techLine}
               </p>
 
@@ -151,4 +165,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       )}
     </AnimatePresence>
   );
+
+  if (!mounted) return null;
+  return createPortal(modalContent, document.body);
 }
