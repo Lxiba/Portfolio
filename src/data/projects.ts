@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Google Gemini Flash Vision API handles AI-powered species identification with structured prompt engineering. FastAPI serves the Python backend with async request handling. React with custom hooks manages the frontend — camera capture, drag-and-drop upload, and identification flow. Vite handles fast bundling. Tailwind CSS provides responsive styling. Built as a Progressive Web App with service workers for installable mobile experience.",
     color: "from-green-700 to-emerald-900",
     image: "/assets/Favicon-Snap.png",
-    deployUrl: "#",
+    deployUrl: "https://specisnap.vercel.app/",
   },
   {
     id: "eunoia",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "React and Next.js power the frontend with server-side API routes handling AI logic. Google Gemini AI drives sentiment analysis, empathetic chat, and weekly reflections. Tailwind CSS handles dark mode styling, and the Web Speech API enables voice journaling.",
     color: "from-emerald-500 to-teal-800",
     image: "/assets/Eunoia logo.png",
-    deployUrl: "#",
+    deployUrl: "https://eunoia-ai.vercel.app/",
   },
   {
     id: "lava-portfolio",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "React with TypeScript and Vite powers the frontend. Three.js renders a real-time 3D room editor with composite furniture, orbit camera, and contact shadows. Zustand manages editor state with 30-level undo/redo. Node.js + Express handles the backend with Supabase (PostgreSQL) for workspaces and project storage. Stable Diffusion integration enables AI image generation, restyling, and inpainting for room concepts.",
     color: "from-blue-900 to-yellow-700",
     image: "/assets/Favicon-PinhaanGlow.png",
-    deployUrl: "#",
+    deployUrl: "https://pinhaanglow.vercel.app/",
   },
   {
     id: "nebula-plan",
