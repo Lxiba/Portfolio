@@ -85,7 +85,16 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileOpen(false);
+                    const target = document.querySelector(link.href);
+                    if (target) {
+                      setTimeout(() => {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }, 300);
+                    }
+                  }}
                   className="text-sm font-medium text-lava-text-secondary hover:text-lava-accent transition-colors py-2"
                 >
                   {link.label}
