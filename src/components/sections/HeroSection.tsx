@@ -44,7 +44,7 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black lava-text mb-5 tracking-wider hero-name"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black lava-text mb-5 tracking-wider"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Laiba Asif
