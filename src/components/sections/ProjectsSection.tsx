@@ -108,9 +108,9 @@ export function ProjectsSection() {
                         <Image
                           src={project.image}
                           alt={project.title}
-                          width={80}
-                          height={80}
-                          className="relative z-10 object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          width={160}
+                          height={160}
+                          className="relative z-10 object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300 max-h-[130px] sm:max-h-[148px] w-auto"
                         />
                       ) : (
                         <span className="relative text-5xl font-black text-white/20 select-none" style={{ fontFamily: "var(--font-heading)" }}>
