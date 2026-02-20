@@ -1,4 +1,5 @@
 <div align="center">
+<img width="160" height="134" alt="Favicon" src="https://github.com/user-attachments/assets/57ac55d0-cad5-4324-9966-88df977402aa" />
 
 # 🌋 Laiba Asif — Personal Portfolio
 
@@ -46,26 +47,26 @@ It's not just a portfolio. It's a demonstration of the kind of work I can do.
 ## Tech Stack
 
 ### Core
-| Technology | Version | Purpose |
-|---|---|---|
-| [Next.js](https://nextjs.org/) | 16 | App Router, SSR, image optimisation |
-| [React](https://react.dev/) | 19 | UI component model |
-| [TypeScript](https://www.typescriptlang.org/) | 5.9 | Type safety throughout |
+| Technology | Purpose |
+|---|---|
+| [Next.js](https://nextjs.org/) | App Router, SSR, image optimisation |
+| [React](https://react.dev/) | UI component model |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety throughout |
 
 ### 3D & Animation
-| Technology | Version | Purpose |
-|---|---|---|
-| [Three.js](https://threejs.org/) | 0.182 | 3D rendering engine |
-| [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber) | 9.5 | React renderer for Three.js |
-| [@react-three/drei](https://github.com/pmndrs/drei) | 10.7 | Three.js helper hooks & components |
-| [Motion](https://motion.dev/) | 12.33 | Scroll-triggered animations & transitions |
+| Technology | Purpose |
+|---|---|
+| [Three.js](https://threejs.org/) | 3D rendering engine |
+| [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber) | React renderer for Three.js |
+| [@react-three/drei](https://github.com/pmndrs/drei) | Three.js helper hooks & components |
+| [Motion](https://motion.dev/) | Scroll-triggered animations & transitions |
 
 ### Styling
-| Technology | Version | Purpose |
-|---|---|---|
-| [Tailwind CSS](https://tailwindcss.com/) | 4 | Utility-first styling with `@theme` syntax |
-| [tailwind-merge](https://github.com/dcastil/tailwind-merge) | 3.4 | Safe class merging |
-| [clsx](https://github.com/lukeed/clsx) | 2.1 | Conditional class construction |
+| Technology | Purpose |
+|---|---|
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling with `@theme` syntax |
+| [tailwind-merge](https://github.com/dcastil/tailwind-merge) | Safe class merging |
+| [clsx](https://github.com/lukeed/clsx) | Conditional class construction |
 
 ### Integrations
 | Technology | Purpose |
@@ -109,7 +110,7 @@ src/
 │       └── SectionHeading.tsx # Reusable gradient-underline section title
 │
 ├── data/
-│   ├── projects.ts   # All 10 projects: title, tech, description, links, color
+│   ├── projects.ts   # All projects: title, tech, description, links, color
 │   └── skills.ts     # Skill categories and icon identifiers
 │
 └── lib/
@@ -143,7 +144,7 @@ Highlight:    #FFD700  (gold) / #FF8C00
 ## Getting Started
 
 ### Prerequisites
-- Node.js 18+
+- Node.js
 - npm or yarn
 
 ### Installation
@@ -219,6 +220,6 @@ This project is open source under the [MIT License](LICENSE). Feel free to use i
 
 <div align="center">
 
-Built by **Laiba Asif** — [LinkedIn](https://www.linkedin.com/in/laiba-asif-842584204/)
+Built by **Laiba** — [LinkedIn](https://www.linkedin.com/in/laiba-asif-842584204/)
 
 </div>
