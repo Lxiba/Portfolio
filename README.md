@@ -4,12 +4,7 @@
 
 **A fiery, immersive portfolio built with Next.js, Three.js, and Tailwind CSS**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-FF4500?style=for-the-badge&logoColor=white)](https://laibasif.vercel.app/)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
-[![Three.js](https://img.shields.io/badge/Three.js-0.182-000000?style=for-the-badge&logo=three.js)](https://threejs.org/)
+[![Live Demo]](https://laibasif.vercel.app/)
 
 </div>
 
@@ -123,23 +118,6 @@ src/
 
 ---
 
-## Projects Showcased
-
-| # | Project | Stack |
-|---|---|---|
-| 1 | **SpeciSnap** | React, Vite, Google Gemini, FastAPI, PWA |
-| 2 | **Eunoia** | Next.js, Google Gemini, Web Speech API |
-| 3 | **ResumeTruth AI** | Next.js, TypeScript, Hugging Face API, pdf-lib |
-| 4 | **Lava Portfolio** | Next.js, Three.js, Tailwind CSS, Motion |
-| 5 | **PinhaanGlow** | React, Three.js, Zustand, Node.js, Supabase |
-| 6 | **Nebula Plan** | React, Node.js, MySQL |
-| 7 | **Bridger** | Django, Python, Bootstrap (AODA-compliant) |
-| 8 | **CI/CD Pipeline** | Jenkins, Helm, Kubernetes, GCP |
-| 9 | **ML Evaluation System** | Java, Python, NumPy, Pandas, Matplotlib, JUnit |
-| 10 | **TaskLet** | HTML, CSS, JavaScript, MySQL, Bootstrap |
-
----
-
 ## Design System
 
 The entire portfolio follows a **lava and fire** theme — dark reds, burnt oranges, and glowing embers against a near-black background.
@@ -241,6 +219,6 @@ This project is open source under the [MIT License](LICENSE). Feel free to use i
 
 <div align="center">
 
-Built by **Laiba Asif** — [LinkedIn](https://www.linkedin.com/in/laiba-asif-842584204/) · [GitHub](https://github.com/Lxiba)
+Built by **Laiba Asif** — [LinkedIn](https://www.linkedin.com/in/laiba-asif-842584204/)
 
 </div>
