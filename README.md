@@ -4,7 +4,7 @@
 
 **A fiery, immersive portfolio built with Next.js, Three.js, and Tailwind CSS**
 
-[![Live Demo]](https://laibasif.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-FF4500?style=for-the-badge&logoColor=white)](https://laibasif.vercel.app/)
 
 </div>
 
