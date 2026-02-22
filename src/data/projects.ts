@@ -59,18 +59,6 @@ export const projects: Project[] = [
     deployUrl: "current",
   },
   {
-    id: "pinhaanglow",
-    title: "PinhaanGlow",
-    techLine: "React, TypeScript, Three.js, Zustand, Node.js, Express, Supabase",
-    description:
-      "An AI-powered 3D interior design platform. Place furniture, customize rooms, paint surfaces, generate AI images, create blueprints, and export designs — all from the browser.",
-    techUsage:
-      "React with TypeScript and Vite powers the frontend. Three.js renders a real-time 3D room editor with composite furniture, orbit camera, and contact shadows. Zustand manages editor state with 30-level undo/redo. Node.js + Express handles the backend with Supabase (PostgreSQL) for workspaces and project storage. Stable Diffusion integration enables AI image generation, restyling, and inpainting for room concepts.",
-    color: "from-blue-900 to-yellow-700",
-    image: "/assets/Favicon-PinhaanGlow.png",
-    deployUrl: "https://pinhaanglow.vercel.app/",
-  },
-  {
     id: "nebula-plan",
     title: "Nebula Plan",
     techLine: "React.js, Node.js, MySQL",
