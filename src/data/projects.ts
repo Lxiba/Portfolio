@@ -38,11 +38,11 @@ export const projects: Project[] = [
   {
     id: "resumetruth-ai",
     title: "ResumeTruth AI",
-    techLine: "Next.js, TypeScript, Tailwind CSS, Hugging Face API, pdf-lib",
+    techLine: "Next.js, TypeScript, Tailwind CSS, Groq API, pdf-lib",
     description:
       "An AI-powered resume optimizer that analyzes your resume against any job description and gives you an honest assessment — with a hiring probability score, missing skills detection, full AI rewrite, annotated review mode, and cover letter generation.",
     techUsage:
-      "Next.js App Router handles routing and server-side API logic. Hugging Face Inference API powers AI analysis, resume rewriting, and cover letter generation. Tailwind CSS and Shadcn UI provide the component library and responsive design.",
+      "Next.js App Router handles routing and server-side API logic. Groq API powers AI analysis, resume rewriting, and cover letter generation. Tailwind CSS and Shadcn UI provide the component library and responsive design.",
     color: "from-blue-600 to-purple-900",
     image: "/assets/ResumeTruth logo.png",
     deployUrl: "https://resumetruth-ai.vercel.app/",
